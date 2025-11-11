@@ -23,7 +23,6 @@ public class CustomerModel {
     @Size(min = 11, max = 11)
     private String cpf;
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

@@ -6,7 +6,14 @@ public class CustomerDTO {
     private String phone;
     private String cpf;
 
-    // Getters e Setters
+    public CustomerDTO(String name, String phone, String cpf) {
+        this.name = name;
+        this.phone = phone;
+        this.cpf = cpf;
+    }
+    
+    public CustomerDTO() {} 
+
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 

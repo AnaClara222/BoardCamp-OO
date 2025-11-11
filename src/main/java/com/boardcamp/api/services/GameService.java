@@ -9,6 +9,7 @@ import com.boardcamp.api.dtos.GameDTO;
 import com.boardcamp.api.models.GameModel;
 import com.boardcamp.api.repositories.GameRepository;
 import com.boardcamp.api.exceptions.GameConflictException;
+import com.boardcamp.api.exceptions.NotFoundException;
 
 @Service
 public class GameService {
@@ -31,5 +32,10 @@ public class GameService {
 
         GameModel game = new GameModel(gameDTO);
         return gameRepository.save(game);
+    }
+
+    public GameModel getGameById(Long id) {
+        return gameRepository.findById(id)
+            .orElseThrow(() -> new NotFoundException("Game not found"));
     }
 }
